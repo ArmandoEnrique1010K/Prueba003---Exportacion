@@ -1,0 +1,5 @@
+Aplicación web en Spring Boot con reportes en PDF y excel , paginación , login y operaciones CRUD
+https://www.youtube.com/watch?v=H8lbgOEdZ9E&ab_channel=LaTecnolog%C3%ADaAvanza
+
+
+https://www.codejava.net/frameworks/spring-boot/pdf-export-example

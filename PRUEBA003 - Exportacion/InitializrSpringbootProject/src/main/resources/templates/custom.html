@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Lista de personas habilitadas</h1>
+        
+        <a th:href="@{/}">Ir al registro de personas</a>
+        <br>
+        <br>
+        <a th:href="@{/true/export/pdf}">Exportar registros habilitados</a>
+        <br>
+        <br>
+
+        <div>
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>DNI</th>
+                    <th>Direccion</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                    <!-- <th>Imagen</th> -->
+                    <th>Estado</th>
+                </tr>
+                <tr th:each="registro : ${personas_habilitadas}">
+                    <td><span th:text="${registro.id}"></span></td>
+                    <td><span th:text="${registro.nombres}"></span></td>
+                    <td><span th:text="${registro.apellidos}"></span></td>
+                    <td><span th:text="${registro.dni}"></span></td>
+                    <td><span th:text="${registro.direccion}"></span></td>
+                    <td><span th:text="${registro.email}"></span></td>
+                    <td><span th:text="${registro.telefono}"></span></td>
+                    <!-- <td><img th:src="@{/assets/{filename}(filename=${registro.rutaImagen})}" width="250px"></td> -->
+                    <td>
+                        <!-- El estado siempre va a ser true -->
+                        <!-- <span th:text="${registro.estado}"></span> -->
+                        <span th:if="${registro.estado} == true" style="color: green; font-weight: bold">habilitado</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

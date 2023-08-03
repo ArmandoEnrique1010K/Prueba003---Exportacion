@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Registro de personas</h1>
+
+        <a th:href="@{/true}">Mostrar solo personas habilitadas</a>
+        <br>
+        <br>
+
+        <a th:href="@{/nuevo}">Agregar un nuevo registro</a>
+        <br>
+        <br>
+
+        <!-- MUESTRA CADA 10 REGISTROS -->
+        <div>
+            Aqui se muestra los ultimos <span th:text="${page.paginaActual} * 10"></span> registros, 
+            menos los ultimos <span th:text="(${page.paginaActual} * 10) - 10"></span>
+            <br>
+            <br>
+        </div>
+        
+        <!-- CONTROLES PARA GESTIONAR LA PAGINACION -->
+        <div>
+            <!-- IR A LA PRIMERA PAGINA -->
+            <span>
+                <span th:if="${page.first}">Primera</span>
+                <a th:if="${not page.first}" th:href="@{${page.url}(page=0)}">Primera</a>
+            </span>
+            &nbsp
+            <!-- IR A LA ANTERIOR PAGINA -->
+            <span>
+                <span th:if="${not page.hasPrevious}">Anterior</span>
+                <a th:if="${page.hasPrevious}" th:href="@{${page.url}(page=${page.paginaActual - 2})}">Anterior</a>
+            </span>
+            <!-- IR A LA PAGINA... -->
+            <span th:each="item : ${page.paginas}">&nbsp
+                <span th:if="${item.actual}" th:text="${item.numero}"></span>
+                <a th:if="${not item.actual}" th:href="@{${page.url}(page=${item.numero - 1})}" th:text="${item.numero}"></a>
+            </span>
+            &nbsp
+            <!-- IR A LA SIGUIENTE PAGINA -->
+            <span>
+                <span th:if="${not page.hasNext}">Siguiente</span>
+                <a th:if="${page.hasNext}" th:href="@{${page.url}(page=${page.paginaActual})}">Siguiente</a>
+            </span>
+            &nbsp
+            <!-- IR A LA UTLIMA PAGINA -->
+            <span>
+                <span th:if="${page.last}">Ultima</span>
+                <a th:if="${not page.last}" th:href="@{${page.url}(page=${page.totalPaginas - 1})}">Ultima</a>
+            </span>
+            <br>
+            <br>
+        </div>
+ 
+        <div>
+            <table border="1">
+                <tr>
+                    <th>Imagen</th>
+                    <th>Datos</th>
+                    <th>Opciones</th>
+                </tr>
+                <tr th:each="registro : ${personas}">
+                    <td>
+                        <img th:src="@{/assets/{filename}(filename=${registro.rutaImagen})}" width="250px">
+                    </td>
+                    <td>
+                        ID: <span th:text="${registro.id}"></span><br>
+                        Nombres: <span th:text="${registro.nombres}"></span><br>
+                        Apellidos: <span th:text="${registro.apellidos}"></span><br>
+                        DNI: <span th:text="${registro.dni}"></span><br>
+                        <!-- Direccion: <span th:text="${registro.direccion}"></span><br> -->
+                        <!-- Email: <span th:text="${registro.email}"></span><br> -->
+                        <!-- Telefono: <span th:text="${registro.telefono}"></span><br> -->
+                        Estado: 
+                        <!-- <span th:text="${registro.estado}"></span> -->
+                        <span th:if="${registro.estado} == true" style="color: green; font-weight: bold">habilitado</span>
+                        <span th:unless="${registro.estado} == true" style="color: red; font-weight: bold">deshabilitado</span>
+
+                        <!-- RUTA PARA VER TODOS LOS DETALLES DEL REGISTRO -->
+                        <br>
+                        <br>
+                        <a th:href="@{/{id}(id=${registro.id})}">más detalles...</a>
+
+                    </td>
+                    <td>
+                        <a th:href="@{/{id}/editar(id=${registro.id})}">editar</a>
+                        <br>
+                        <br>
+                        <!-- SOLAMENTE VA A MOSTRAR LA OPCION CAMBIAR ESTADO A FALSE SI EL ESTADO DEL REGISTRO ES TRUE O HABILITADO, Y VICEVERSA-->
+                        <span th:if = "${registro.estado} == true" >
+                            <a th:href="@{/{id}/cambioestadoafalse(id=${registro.id})}" style="color: red">Cambiar estado<br> a false</a>
+                        </span>
+                        <span th:unless = "${registro.estado} == true" >
+                            <a th:href="@{/{id}/cambioestadoatrue(id=${registro.id})}" style="color: green">Cambiar estado<br> a true</a>
+                        </span>
+                        <br>
+                        <br>
+                        <a th:href="@{/{id}/eliminardefinitivamente(id=${registro.id})}">Eliminar<br>definitivamente</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>

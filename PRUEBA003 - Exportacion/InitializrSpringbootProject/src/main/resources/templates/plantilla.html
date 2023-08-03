@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Datos del registro</h1>
+        <div th:each = "registro: ${caracteristicas_persona}">
+            <img th:src = "@{/assets/{filename}(filename=${registro.rutaImagen})}" width="600px">
+            <br>
+            ID: <span th:text = "${registro.id}" ></span><br>
+            Nombres: <span th:text = "${registro.nombres}"></span><br>
+            Apellidos: <span th:text = "${registro.apellidos}" ></span><br>
+            DNI: <span th:text = "${registro.dni}" ></span><br>
+            Direccion: <span th:text = "${registro.direccion}" ></span><br>
+            Email: <span th:text = "${registro.email}" ></span><br>
+            Telefono: <span th:text = "${registro.telefono}" ></span><br>
+            Nombre generado para la imagen: <span th:text = "${registro.rutaImagen}" ></span><br>
+            Estado:
+            <span th:if = "${registro.estado} == true" style="color: green; font-weight: bold">habilitado</span>
+            <span th:unless = "${registro.estado} == true" style="color: red; font-weight: bold">deshabilitado</span>
+            <br>
+        </div>
+        <br>
+        <!-- RUTA HACIA REGISTRO DE PERSONAS -->
+        <a th:href="@{/}">Atras</a>
+    </body>
+</html>

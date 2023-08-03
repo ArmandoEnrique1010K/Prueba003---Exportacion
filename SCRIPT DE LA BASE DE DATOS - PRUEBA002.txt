@@ -1,0 +1,100 @@
+CREATE DATABASE PRUEBA002;
+USE PRUEBA002;
+
+INSERT INTO tabla_personas (id, nombres, apellidos, dni, direccion, email, telefono, estado, ruta_imagen) VALUES 
+(1, 'Juan', 'Pérez', 12345678, 'Calle A, Ciudad', 'juan@example.com', 923456789, 1, "Classic Shell.jpg"),
+(2, 'María', 'Gómez', 87654321, 'Avenida B, Ciudad', 'maria@example.com', 987654321, 1, "Ocean.jpg"),
+(3, 'Pedro', 'Rodríguez', 56789012, 'Calle X, Ciudad', 'pedro@example.com', 967890123, 1, "Snow.jpeg"),
+(4, 'Ana', 'López', 90123456, 'Calle Y, Ciudad', 'ana@example.com', 901234568, 1, "Synthwave retro.jpg"),
+(5, 'Carlos', 'Martínez', 65432109, 'Avenida Z, Ciudad', 'carlos@example.com', 954321097, 0, "Tree.jpg");
+
+SELECT * FROM tabla_personas;
+SELECT * FROM tabla_personas WHERE estado = true;
+
+
+# SI NO CONOCE EL ULTIMO ID DEL REGISTRO QUE FUE INSERTADO, ENTONCES SE PUEDE AÑADIR 21 REGISTROS DE LA SIGUIENTE MANERA (EXCEPTUANDO EL ID):
+INSERT INTO tabla_personas (nombres, apellidos, dni, direccion, email, telefono, estado, ruta_imagen) VALUES
+('nombre1', 'apellido1', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10.jpg"),
+('nombre2', 'apellido2', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (1).jpg"),
+('nombre3', 'apellido3', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (2).jpg"),
+('nombre4', 'apellido4', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (3).jpg"),
+('nombre5', 'apellido5', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (4).jpg"),
+('nombre6', 'apellido6', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (5).jpg"),
+('nombre7', 'apellido7', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (6).jpg"),
+('nombre8', 'apellido8', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (7).jpg"),
+('nombre9', 'apellido9', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (8).jpg"),
+('nombre10', 'apellido10', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (9).jpg"),
+('nombre11', 'apellido11', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (10).jpg"),
+('nombre12', 'apellido12', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (11).jpg"),
+('nombre13', 'apellido13', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (12).jpg"),
+('nombre14', 'apellido14', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (13).jpg"),
+('nombre15', 'apellido15', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (14).jpg"),
+('nombre16', 'apellido16', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (15).jpg"),
+('nombre17', 'apellido17', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (16).jpg"),
+('nombre18', 'apellido18', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (17).jpg"),
+('nombre19', 'apellido19', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (18).jpg"),
+('nombre20', 'apellido20', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (19).jpg"),
+('nombre21', 'apellido21', '12345678', 'Calle X, Ciudad', 'corro@example.com', 5550100, 1, "Papel Tapiz de windows 10 (20).jpg");
+
+SELECT * FROM tabla_personas;
+
+# 50 REGISTROS MÁS, PERO SIN IMAGENES
+INSERT INTO tabla_personas (nombres, apellidos, dni, direccion, email, telefono, estado, ruta_imagen) VALUES
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+# HASTA AQUI HAY 10
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+# HASTA AQUI HAY 20
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+# HASTA AQUI HAY 30
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+# HASTA AQUI HAY 40
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, ""),
+('nombreX', 'apellidoX', '12345678', 'Calle X, Ciudad', 'ejemplo@example.com', 5550100, 1, "");
+# HASTA AQUI HAY 50
+
+
+SELECT * FROM tabla_personas;
