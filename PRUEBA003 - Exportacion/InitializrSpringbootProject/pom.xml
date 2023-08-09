@@ -62,7 +62,8 @@
         <dependency>
             <groupId>com.github.librepdf</groupId>
             <artifactId>openpdf</artifactId>
-            <version>1.3.26</version> 
+            <version>1.3.26</version>
+            <type>jar</type>
         </dependency>
 
         <!-- EXPORTAR A EXCEL -->

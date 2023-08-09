@@ -14,6 +14,9 @@
         <a th:href="@{/true/export/pdf}">Exportar registros habilitados</a>
         <br>
         <br>
+        <a th:href="@{/true/export/excel}">Exportar registros habilitados a excel</a>
+        <br>
+        <br>
 
         <div>
             <table border="1">
@@ -42,6 +45,7 @@
                         <!-- <span th:text="${registro.estado}"></span> -->
                         <span th:if="${registro.estado} == true" style="color: green; font-weight: bold">habilitado</span>
                     </td>
+                    
                 </tr>
             </table>
         </div>
